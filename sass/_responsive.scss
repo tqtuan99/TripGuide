@@ -131,13 +131,15 @@
         }
       }
       .search-content-footer {
+        gap: 0;
         .search-info {
-          // gap: 0;
+          gap: 0;
           flex-wrap: wrap;
           // Fix lỗi gap không ăn trên trình duyệt Mobile
           .search-location,
           .search-checkin,
-          .search-checkout {
+          .search-checkout,
+          .search-passenger-mobile {
             margin-bottom: 10px;
           }
           .search-checkin {

@@ -4,7 +4,6 @@ body {
   color: $text-color;
   font-weight: 400;
   background: #f2f2f2;
-  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -12,6 +11,9 @@ body {
 ::-webkit-scrollbar-thumb {
   border-radius: 6px;
   background: linear-gradient(rgb(0, 238, 255), rgb(10, 199, 189));
+}
+main{
+  overflow-x: hidden;
 }
 button {
   cursor: pointer;

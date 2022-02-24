@@ -44,7 +44,6 @@ body {
   color: #84878B;
   font-weight: 400;
   background: #f2f2f2;
-  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -54,6 +53,10 @@ body {
 ::-webkit-scrollbar-thumb {
   border-radius: 6px;
   background: linear-gradient(#00eeff, #0ac7bd);
+}
+
+main {
+  overflow-x: hidden;
 }
 
 button {
@@ -426,12 +429,14 @@ button {
 }
 .hero-search .search-content-footer .search-info .search-location,
 .hero-search .search-content-footer .search-info .search-checkin,
-.hero-search .search-content-footer .search-info .search-checkout {
+.hero-search .search-content-footer .search-info .search-checkout,
+.hero-search .search-content-footer .search-info .search-passenger-mobile {
   position: relative;
 }
 .hero-search .search-content-footer .search-info .search-location label,
 .hero-search .search-content-footer .search-info .search-checkin label,
-.hero-search .search-content-footer .search-info .search-checkout label {
+.hero-search .search-content-footer .search-info .search-checkout label,
+.hero-search .search-content-footer .search-info .search-passenger-mobile label {
   display: flex;
   flex-direction: column;
   background: #f4f5f7;
@@ -446,7 +451,8 @@ button {
 }
 .hero-search .search-content-footer .search-info .search-location label input,
 .hero-search .search-content-footer .search-info .search-checkin label input,
-.hero-search .search-content-footer .search-info .search-checkout label input {
+.hero-search .search-content-footer .search-info .search-checkout label input,
+.hero-search .search-content-footer .search-info .search-passenger-mobile label input {
   height: 100%;
   background: #f4f5f7;
   color: #b1b5c4;
@@ -471,6 +477,7 @@ button {
   border-radius: 20px;
   height: 300px;
   padding: 18px 20px;
+  z-index: 1000;
 }
 .hero-search .search-content-footer .search-info .search-location .location-model .location-item {
   display: flex;
@@ -505,6 +512,9 @@ button {
 .hero-search .search-content-footer .search-info .search-checkin,
 .hero-search .search-content-footer .search-info .search-checkout {
   width: 250px;
+}
+.hero-search .search-content-footer .search-info .search-passenger-mobile {
+  display: none;
 }
 .hero-search .search-content-footer .search-btn {
   color: #ffffff;
@@ -583,7 +593,7 @@ button {
   grid-template-columns: 1.5fr 1.5fr 1fr;
   grid-template-rows: 1fr 0.25fr 0.75fr 1fr;
   row-gap: 30px;
-  grid-template-areas: "h1 h1 h2" "h1 h1 h3" "h4 h5 h3" "h4 h5 h6";
+  grid-template-areas: "h1 h1 h4" "h1 h1 h5" "h2 h3 h5" "h2 h3 h6";
   overflow: hidden;
 }
 .feature-item {
@@ -623,7 +633,7 @@ button {
 .feature-item-name {
   font-size: 40px;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .feature-item-activity {
   display: flex;
@@ -640,7 +650,7 @@ button {
 }
 .feature-item-activity p {
   font-size: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .feature-item:first-child {
   grid-area: h1;
@@ -650,25 +660,25 @@ button {
 }
 .feature-item:nth-child(2) {
   grid-area: h2;
-  width: 270px;
-  height: 220px;
-}
-.feature-item:nth-child(3) {
-  grid-area: h3;
-  width: 270px;
-  height: 220px;
-}
-.feature-item:nth-child(4) {
-  grid-area: h4;
   margin: -25px 40px 0 0;
   width: 408px;
   height: 408px;
 }
-.feature-item:nth-child(5) {
-  grid-area: h5;
+.feature-item:nth-child(3) {
+  grid-area: h3;
   margin: -25px 30px 0 10px;
   width: 408px;
   height: 408px;
+}
+.feature-item:nth-child(4) {
+  grid-area: h4;
+  width: 270px;
+  height: 220px;
+}
+.feature-item:nth-child(5) {
+  grid-area: h5;
+  width: 270px;
+  height: 220px;
 }
 .feature-item:nth-child(6) {
   grid-area: h6;
@@ -937,12 +947,13 @@ button {
   display: flex;
   align-items: center;
   margin-right: -30px;
+  flex-wrap: wrap;
+  row-gap: 20px;
 }
 .travel-item {
   position: relative;
-  width: calc(33.33333% - 30px);
+  width: calc(25% - 30px);
   margin-right: 30px;
-  width: 270px;
   height: 320px;
 }
 .travel-item img {
@@ -999,7 +1010,7 @@ button {
   z-index: 10 !important;
   top: 785px !important;
   width: 690px !important;
-  height: 350px !important;
+  height: 350px;
   padding: 25px;
 }
 
@@ -1070,6 +1081,211 @@ button {
 .ui-datepicker-multi-2 .ui-datepicker-group {
   width: 50%;
   height: 90% !important;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .hero-search {
+    height: 315px;
+  }
+  .hero-search .passenger-model {
+    z-index: 1000;
+    bottom: 320px !important;
+  }
+  .hero-search .search-content {
+    padding: 20px;
+  }
+  .hero-search .search-content-footer {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-search .search-content-footer .search-info {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .hero-search .search-content-footer .search-info .loca-item {
+    display: none;
+  }
+
+  .trending-list,
+.feature-list {
+    display: block;
+  }
+
+  .trending-item-left,
+.trending-item-right {
+    width: calc(100% - 30px);
+  }
+
+  .feature-item {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .feature-item:not(:last-child) {
+    margin-bottom: 20px !important;
+  }
+
+  .travel-item {
+    width: calc(50% - 30px) !important;
+  }
+}
+@media only screen and (max-width: 46.25em) {
+  .header .header-container {
+    padding: 24px 20px;
+  }
+  .header-logo img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .header-logo span {
+    font-size: 12px !important;
+  }
+  .header-util .avatar img {
+    width: 28px;
+    height: 28px;
+  }
+  .header-util .avatar span,
+.header-util .avatar i {
+    display: none;
+  }
+  .header-util .line {
+    margin: 0 15px;
+  }
+  .header-util .lang {
+    font-size: 12px;
+  }
+  .header-util .lang img {
+    margin: 0 10px 0 8px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero .hero-content {
+    bottom: 380px;
+  }
+  .hero .hero-content p {
+    font-size: 40px;
+    width: 320px;
+    line-height: 1.5;
+  }
+  .hero .hero-search {
+    height: 425px !important;
+  }
+  .hero .hero-search .search-content-top {
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    padding: 0;
+  }
+  .hero .hero-search .search-content-top .search-service .search-room::after {
+    bottom: -15px;
+  }
+  .hero .hero-search .search-content-top .search-passenger {
+    margin: 30px 0 15px 0;
+  }
+  .hero .hero-search .search-content-top .passenger-model {
+    z-index: 1000;
+    width: 100%;
+    bottom: 100px !important;
+  }
+  .hero .hero-search .search-content-footer .search-info {
+    flex-wrap: wrap;
+  }
+  .hero .hero-search .search-content-footer .search-info .search-checkin,
+.hero .hero-search .search-content-footer .search-info .search-checkout {
+    width: calc(50% - 5px);
+  }
+  .hero .hero-search .search-content-footer .search-info .loca-item {
+    display: none;
+  }
+  .hero .hero-search .search-content-footer .search-info .search-location {
+    width: 100%;
+  }
+  .hero .hero-search .search-content-footer .search-info .search-location .location-model {
+    width: 100%;
+  }
+  .hero .hero-search .search-content-footer .search-passenger-mobile {
+    display: block !important;
+    width: 100%;
+  }
+  .hero .hero-search .search-content-footer .search-btn {
+    width: 100%;
+  }
+
+  .trending-list {
+    padding: 0;
+  }
+  .trending-list .trending-item-info {
+    padding: 12px;
+  }
+  .trending-list .trending-item-info img {
+    margin-right: 15px;
+    width: 150px;
+  }
+  .trending-list .trending-item-detail .item-price {
+    font-size: 18px;
+  }
+
+  .text-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .text-sub-heading {
+    width: auto !important;
+    font-size: 14px !important;
+    text-align: center;
+  }
+
+  .place-list::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+  }
+
+  .place-list {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .place-list .place-item {
+    flex: 1 0 220px;
+  }
+  .place-list .place-item-content {
+    padding: 20px;
+    text-align: center;
+  }
+  .place-list .place-item-content img {
+    margin: 0 auto 10px;
+  }
+
+  .travel-list::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+  }
+  .travel-list {
+    flex-wrap: nowrap;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+  }
+  .travel-list .travel-item {
+    flex: 1 0 270px;
+    width: 80%;
+    margin-right: 20px;
+  }
+
+  #ui-datepicker-div {
+    width: auto !important;
+    left: 0 !important;
+    height: auto !important;
+  }
+
+  .ui-datepicker-multi-2 .ui-datepicker-group {
+    width: 100% !important;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

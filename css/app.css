@@ -377,7 +377,6 @@ img:hover {
 .hero-search .search-content-footer .search-info {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 .hero-search .search-content-footer .search-info .loca-item {
   position: absolute;
@@ -1330,6 +1329,14 @@ img:hover {
   }
   .hero .hero-search .search-content-footer .search-info {
     flex-wrap: wrap;
+  }
+  .hero .hero-search .search-content-footer .search-info .search-location,
+.hero .hero-search .search-content-footer .search-info .search-checkin,
+.hero .hero-search .search-content-footer .search-info .search-checkout {
+    margin-bottom: 10px;
+  }
+  .hero .hero-search .search-content-footer .search-info .search-checkin {
+    margin-right: 10px;
   }
   .hero .hero-search .search-content-footer .search-info .search-checkin,
 .hero .hero-search .search-content-footer .search-info .search-checkout {

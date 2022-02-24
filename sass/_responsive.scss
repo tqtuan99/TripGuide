@@ -132,7 +132,17 @@
       }
       .search-content-footer {
         .search-info {
+          // gap: 0;
           flex-wrap: wrap;
+          // Fix lỗi gap không ăn trên trình duyệt Mobile
+          .search-location,
+          .search-checkin,
+          .search-checkout {
+            margin-bottom: 10px;
+          }
+          .search-checkin {
+            margin-right: 10px;
+          }
           .search-checkin,
           .search-checkout {
             width: calc(50% - 5px);

@@ -1,0 +1,15 @@
+.footer {
+  &-sub {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: rgb(0 43 255 / 72%);
+    border-radius: 16px;
+  }
+  &-sub::before {
+    position: absolute;
+    background-image: url('../images/Ellipse.png');
+    top: 0;
+    right: 0;
+  }
+}

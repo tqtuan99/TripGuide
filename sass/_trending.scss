@@ -35,6 +35,13 @@
       margin-right: 30px;
       flex-shrink: 0;
     }
+    img:hover {
+      transform: none;
+    }
+  }
+  &-item-info:hover {
+    background-color: #21bfee;
+    transition: all 1.5s ease;
   }
   &-item-info {
     display: flex;
@@ -92,4 +99,3 @@
     }
   }
 }
-

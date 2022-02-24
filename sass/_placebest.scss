@@ -19,6 +19,10 @@
     margin-left: -30px;
     margin-top: 65px;
   }
+  &-item:hover {
+    background-color: #FFFF;
+    transition: all 1.5s ease;
+  }
   &-item {
     overflow: hidden;
     width: calc(25% - 30px);
@@ -51,8 +55,5 @@
       font-weight: 500;
       color: $text-color;
     }
-  }
-  &-item:nth-child(2) {
-    background-color: #ffffff;
   }
 }

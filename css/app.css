@@ -55,8 +55,9 @@ body {
   background: linear-gradient(#00eeff, #0ac7bd);
 }
 
-main {
-  overflow-x: hidden;
+main,
+footer {
+  overflow: hidden;
 }
 
 button {
@@ -64,6 +65,11 @@ button {
   outline: none;
   border: none;
   font-family: "DM Sans", sans-serif;
+}
+
+img:hover {
+  transform: scale(1.5);
+  transition: all 3s ease;
 }
 
 .wrapper {
@@ -75,57 +81,6 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-.button {
-  display: inline-block;
-  padding: 13px 45px;
-  border-radius: 100rem;
-  font-family: "DM Sans", sans-serif;
-  line-height: 1;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  text-align: center;
-  white-space: nowrap;
-}
-.button--primary {
-  font-weight: 700;
-  background-color: #FFFFFF;
-  color: white;
-}
-.button--outline {
-  background-color: transparent;
-  color: #FFFFFF;
-  font-weight: 500;
-  border: 1px solid;
-}
-.button--rounded {
-  border-radius: 10px;
-  padding: 17px 65px;
-}
-.button--shadow {
-  position: relative;
-}
-.button--shadow:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 90%;
-  height: 100%;
-  transform: translate(-50%, 50%);
-  background-color: rgba(245, 56, 56, 0.35);
-  filter: blur(54px);
-  border-radius: inherit;
-}
-
-.boxed {
-  max-width: 555px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 .text-heading {
@@ -156,6 +111,11 @@ button {
   position: absolute;
   top: -100px;
   color: #84878b;
+}
+
+.slick-arrow:hover {
+  background-color: #21bfee;
+  transition: all 1s ease;
 }
 
 .slick-next {
@@ -270,6 +230,9 @@ button {
 
 .hero {
   margin-top: 78px;
+}
+.hero img:hover {
+  transform: none;
 }
 .hero img {
   position: relative;
@@ -545,6 +508,10 @@ button {
   margin-left: -30px;
   margin-top: 65px;
 }
+.place-item:hover {
+  background-color: #FFFF;
+  transition: all 1.5s ease;
+}
 .place-item {
   overflow: hidden;
   width: calc(25% - 30px);
@@ -577,9 +544,6 @@ button {
   font-size: 14;
   font-weight: 500;
   color: #84878B;
-}
-.place-item:nth-child(2) {
-  background-color: #ffffff;
 }
 
 .feature {
@@ -701,14 +665,19 @@ button {
   align-items: center;
   margin-right: -30px;
 }
+.tour-item:hover img {
+  transform: scale(1.2);
+  transition: all 2.5s ease;
+}
 .tour-item {
+  overflow: hidden;
   position: relative;
   width: calc(33.33333% - 30px);
+  border-radius: 16px;
   margin-right: 30px;
 }
 .tour-item img {
   background: linear-gradient(175.54deg, rgba(2, 0, 14, 0.13) 9.38%, rgba(42, 34, 101, 0) 47.26%, rgba(15, 11, 44, 0.6) 92.77%);
-  border-radius: 16px;
   height: 500px;
   width: 100%;
   flex-shrink: 0;
@@ -763,6 +732,11 @@ button {
 }
 .explore-item:nth-child(2) {
   box-shadow: 0px 15px 45px rgba(102, 102, 102, 0.1);
+}
+.explore-item:hover {
+  background-color: #21bfee;
+  transition: all 1.5s ease;
+  color: #FFFFFF;
 }
 .explore-item {
   position: relative;
@@ -879,6 +853,13 @@ button {
   margin-right: 30px;
   flex-shrink: 0;
 }
+.trending-item-left img:hover, .trending-item-right img:hover {
+  transform: none;
+}
+.trending-item-info:hover {
+  background-color: #21bfee;
+  transition: all 1.5s ease;
+}
 .trending-item-info {
   display: flex;
   justify-content: left;
@@ -950,15 +931,20 @@ button {
   flex-wrap: wrap;
   row-gap: 20px;
 }
+.travel-item:hover img {
+  transform: scale(1.2);
+  transition: all 2.5s ease;
+}
 .travel-item {
   position: relative;
+  border-radius: 15px;
+  overflow: hidden;
   width: calc(25% - 30px);
   margin-right: 30px;
   height: 320px;
 }
 .travel-item img {
   background: linear-gradient(8.54deg, rgba(31, 31, 31, 0.63) 17.12%, rgba(35, 35, 35, 0) 92.69%);
-  border-radius: 15px;
   height: 100%;
   width: 100%;
   flex-shrink: 0;
@@ -995,11 +981,149 @@ button {
   background: rgba(0, 43, 255, 0.72);
   border-radius: 16px;
 }
-.footer-sub::before {
+.footer-subscribe {
+  position: relative;
+}
+.footer-menu {
   position: absolute;
-  background-image: url("../images/Ellipse.png");
-  top: 0;
-  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 90px;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
+}
+.footer-menu .subscribe {
+  position: relative;
+}
+.footer-menu .subscribe input {
+  position: relative;
+  width: 490px;
+  padding: 26px 0 26px 22px;
+  font-size: 16px;
+  color: #b1b5c4;
+  font-weight: 500;
+  background: #fcfcfd;
+  box-shadow: 10px 16px 60px -7px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  border: none;
+}
+.footer-menu .subscribe button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 18px 30px;
+  background: #353945;
+  box-shadow: 0px 12px 20px -5px rgba(23, 23, 126, 0.1);
+  border-radius: 4px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.5;
+  color: #ffffff;
+}
+.footer-text-heading {
+  font-size: 44px;
+  font-weight: 800;
+}
+.footer-text-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.88;
+  width: 370px;
+}
+.footer-main {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30px;
+  margin-bottom: 150px;
+}
+.footer-main .trip-guide {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+}
+.footer-main .trip-guide .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.footer-main .trip-guide .logo img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+.footer-main .trip-guide .logo p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222529;
+}
+.footer-main .trip-guide .info-trip {
+  font-size: 16px;
+  color: #84878b;
+  margin-bottom: 24px;
+}
+.footer-main .trip-guide .dark-light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 128px;
+  height: 38px;
+  background: #ffffff;
+  border: 0.5px solid #efefef;
+  border-radius: 10px;
+}
+.footer-main .trip-guide .dark-light .light {
+  width: 50%;
+  height: 30px;
+  background: #fcfcfd;
+  box-shadow: 0px 2px 2px rgba(67, 67, 67, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 1px;
+}
+.footer-main .trip-guide .dark-light .light i {
+  width: 100%;
+}
+.footer-main .trip-guide .dark-light .dark {
+  text-align: center;
+  line-height: 38px;
+  width: 50%;
+}
+.footer-main .trip-info {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 150px;
+}
+.footer-main .trip-info .service,
+.footer-main .trip-info .support,
+.footer-main .trip-info .business {
+  display: flex;
+  font-weight: 500;
+  flex-direction: column;
+}
+.footer-main .trip-info .service .heading,
+.footer-main .trip-info .support .heading,
+.footer-main .trip-info .business .heading {
+  color: #222529;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.footer-main .trip-info .service .subheading,
+.footer-main .trip-info .support .subheading,
+.footer-main .trip-info .business .subheading {
+  font-size: 16px;
+  color: #84878b;
+  line-height: 2.5;
 }
 
 #ui-datepicker-div {
@@ -1129,6 +1253,20 @@ button {
 
   .travel-item {
     width: calc(50% - 30px) !important;
+  }
+
+  .footer .footer-subscribe .footer-menu {
+    display: block;
+    padding: 15px 20px;
+  }
+  .footer .footer-subscribe .footer-menu .subscribe input {
+    width: 100%;
+  }
+  .footer .footer-subscribe .footer-menu .footer-text {
+    margin-bottom: 15px;
+  }
+  .footer .footer-main .trip-info {
+    margin-left: 20px;
   }
 }
 @media only screen and (max-width: 46.25em) {
@@ -1285,6 +1423,65 @@ button {
 
   .ui-datepicker-multi-2 .ui-datepicker-group {
     width: 100% !important;
+  }
+
+  .footer-sub {
+    height: 170px;
+  }
+  .footer-subscribe .footer-menu {
+    display: block;
+    padding: 15px 20px;
+    height: auto;
+  }
+  .footer-subscribe .footer-menu .subscribe input {
+    width: 100%;
+    padding: 20px 0 20px 22px;
+    text-overflow: ellipsis;
+  }
+  .footer-subscribe .footer-menu .subscribe button {
+    padding: 10px 20px;
+  }
+  .footer-subscribe .footer-menu .footer-text {
+    margin-bottom: 15px;
+  }
+  .footer-subscribe .footer-menu .footer-text-heading {
+    font-size: 18px;
+  }
+  .footer-subscribe .footer-menu .footer-text-subheading {
+    font-size: 12px;
+    width: auto;
+  }
+  .footer .footer-main {
+    margin-top: 50px;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .footer .footer-main .trip-info {
+    margin-left: 20px;
+    display: block;
+  }
+  .footer .footer-main .trip-info .service,
+.footer .footer-main .trip-info .support {
+    border-bottom: 1px solid #b3bcc8;
+    margin-bottom: 20px;
+  }
+  .footer .footer-main .trip-info .service .subheading,
+.footer .footer-main .trip-info .support .subheading {
+    margin-bottom: 20px;
+  }
+  .footer .footer-main .trip-guide {
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+  .footer .footer-main .trip-guide .logo img {
+    width: 25px;
+    height: 25px;
+  }
+  .footer .footer-main .trip-guide .logo p {
+    font-size: 15px;
+  }
+  .footer .footer-main .trip-guide .info-trip {
+    display: none;
   }
 }
 

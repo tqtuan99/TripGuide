@@ -39,6 +39,27 @@
   .travel-item {
     width: calc(50% - 30px) !important;
   }
+  .footer {
+    .footer-subscribe {
+      .footer-menu {
+        display: block;
+        padding: 15px 20px;
+        .subscribe {
+          input {
+            width: 100%;
+          }
+        }
+        .footer-text {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .footer-main {
+      .trip-info {
+        margin-left: 20px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 46.25em) {
@@ -208,5 +229,70 @@
   }
   .ui-datepicker-multi-2 .ui-datepicker-group {
     width: 100% !important;
+  }
+  .footer {
+    &-sub {
+      height: 170px;
+    }
+    &-subscribe {
+      .footer-menu {
+        display: block;
+        padding: 15px 20px;
+        height: auto;
+        .subscribe {
+          input {
+            width: 100%;
+            padding: 20px 0 20px 22px;
+            text-overflow: ellipsis;
+          }
+          button {
+            padding: 10px 20px;
+          }
+        }
+        .footer-text {
+          margin-bottom: 15px;
+          &-heading {
+            font-size: 18px;
+          }
+          &-subheading {
+            font-size: 12px;
+            width: auto;
+          }
+        }
+      }
+    }
+    .footer-main {
+      margin-top: 50px;
+      flex-direction: column-reverse;
+      padding: 0;
+      .trip-info {
+        margin-left: 20px;
+        display: block;
+        .service,
+        .support {
+          border-bottom: 1px solid #b3bcc8;
+          margin-bottom: 20px;
+          .subheading {
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .trip-guide {
+        margin-left: 20px;
+        margin-top: 40px;
+        .logo {
+          img {
+            width: 25px;
+            height: 25px;
+          }
+          p {
+            font-size: 15px;
+          }
+        }
+        .info-trip {
+          display: none;
+        }
+      }
+    }
   }
 }

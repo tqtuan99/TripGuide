@@ -14,6 +14,11 @@
   &-item:nth-child(2) {
     box-shadow: 0px 15px 45px rgba(102, 102, 102, 0.1);
   }
+  &-item:hover {
+    background-color: #21bfee;
+    transition: all 1.5s ease;
+    color: #FFFFFF;
+  }
   &-item {
     position: relative;
     width: calc(25% - 30px);

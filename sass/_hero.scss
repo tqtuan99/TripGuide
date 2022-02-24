@@ -1,5 +1,8 @@
 .hero {
   margin-top: 78px;
+  img:hover {
+    transform: none;
+  }
   img {
     position: relative;
     width: 100%;

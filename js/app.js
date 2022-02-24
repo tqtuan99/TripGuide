@@ -5,18 +5,27 @@ $(".tour-list").slick({
    prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fas fa-angle-left'></i></button>",
    nextArrow: "<button type='button' class='slick-next pull-right'><i class='fas fa-angle-right'></i></button>",
    autoplay: true,
+   swipeToSlide: true,
+   infinite: true,
+   cssEase: 'linear',
    responsive: [{
          breakpoint: 1025,
          settings: {
             slidesToShow: 2,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
          },
       },
       {
          breakpoint: 480,
          settings: {
             slidesToShow: 1,
+            infinite: true,
+            autoplay: true,
             arrows: false,
             infinite: false,
+            autoplaySpeed: 1500,
          },
       },
    ],
@@ -27,17 +36,27 @@ $(".explore-list").slick({
    slidesToScroll: 1,
    prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fas fa-angle-left'></i></button>",
    nextArrow: "<button type='button' class='slick-next pull-right'><i class='fas fa-angle-right'></i></button>",
-   // autoplay: true,
+   autoplay: true,
+   swipeToSlide: true,
+   infinite: true,
+   cssEase: 'linear',
+   autoplaySpeed: 2000,
    responsive: [{
          breakpoint: 1025,
          settings: {
             slidesToShow: 2,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
          },
       },
       {
          breakpoint: 480,
          settings: {
             slidesToShow: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
             arrows: false,
             infinite: false,
          },
@@ -63,23 +82,36 @@ var searchLocation = document.querySelector('.search-location')
 
 searchLocation.onclick = function (event) {
    model.style.display = 'flex';
-   event.stopPropagation();
 }
 
-window.onclick = function (event) {
-   if (event.target.element == model || event.target.element == showPassengerModel) {
-      // if(model.style.display == 'flex')
-         model.style.display = 'none';
-      // if(showPassengerModel.style.display== 'flex')
-         showPassengerModel.style.display= 'none'
-   }
+var document = document.getRootNode(document)
+
+function hidePassenger() {
+   showPassengerModel.style.display = 'none';
 }
+
+function hideModel() {
+   model.style.display = 'none';
+}
+
+document.addEventListener('click', function (event) {
+   if (!$(event.target).closest(".location-model,.search-location").length) {
+      hideModel();
+   }
+
+   if (!$(event.target).closest(".passenger-model,.search-pass").length) {
+      hidePassenger();
+      passengerIcon.classList.remove('fa-chevron-up');
+      passengerIcon.classList.add('fa-chevron-down');
+   }
+})
 
 let fillDatas = document.querySelectorAll('.item-detail')
 for (const fillData of fillDatas) {
-   fillData.onclick = function () {
+   fillData.onclick = function (event) {
       fillsquare(fillData);
-      model.style.display = 'none';
+      hideModel();
+      event.stopPropagation();
    }
 }
 
@@ -96,6 +128,7 @@ function fillsquare(element) {
 let showPassenger = document.querySelector('.search-pass')
 let showPassengerModel = document.querySelector('.passenger-model')
 let passengerIcon = document.querySelector('.passengerIcon')
+var searchPassengerMobile = document.querySelector('.search-passenger-mobile')
 showPassenger.onclick = function () {
    if (showPassengerModel.style.display == 'flex') {
       showPassengerModel.style.display = 'none';
@@ -106,4 +139,7 @@ showPassenger.onclick = function () {
       passengerIcon.classList.remove('fa-chevron-down');
       passengerIcon.classList.add('fa-chevron-up');
    }
+}
+searchPassengerMobile.onclick = function (event) {
+   showPassengerModel.style.display = 'flex';
 }

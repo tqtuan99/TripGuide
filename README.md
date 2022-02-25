@@ -2,7 +2,7 @@
 
 ---
 
-## This is one of the small projects about learning HTML, CSS.
+## The process of learning HTML, CSS, JS.
 
 *`Note:*` *Cut interface from FIGMA*
 
